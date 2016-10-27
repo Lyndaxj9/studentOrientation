@@ -10,7 +10,7 @@ import studentOrientation.workshop.StudentOWorkshop;
 public class Driver {
 
     public static void main(String[] args) {
-        OOOrientation myOrientation = new OOStudentOrientation(BookstoreInterface.Options.MANDOBOOKS, TourInterface.Transport.FOOT, SelectDormInterface.Selecting.GAME, RegisterInterface.RegMethod.COMPLAB);
+        OOOrientation myOrientation = new OOStudentOrientation(BookstoreInterface.Options.UNIBOOKSTORE, TourInterface.Transport.FOOT, SelectDormInterface.Selecting.GAME, RegisterInterface.RegMethod.COMPLAB);
 
         OrientationWorkshop shop = new StudentOWorkshop();
         shop.construct(myOrientation);
