@@ -1,19 +1,20 @@
 package studentOrientation.factory;
 
 import studentOrientation.activity.ActivityInterface;
+import studentOrientation.activity.Options;
 import studentOrientation.activity.BookstoreInterface;
 import studentOrientation.activity.UniBookstore;
 
-public class SimpleBookstoreFactory implements SimpleBookstoreFactoryI{
+public class SimpleBookstoreFactory implements SimpleActivityFactoryI {
     private BookstoreInterface bookstore;
 
     public SimpleBookstoreFactory(){}
 
-    public BookstoreInterface createActivity(BookstoreInterface.Options store) {
+    public BookstoreInterface createActivity(Options activity) {
         System.out.println("createActivity()");
-        if(store == BookstoreInterface.Options.UNIBOOKSTORE) {
+        if(activity == Options.UNIBOOKSTORE) {
             bookstore = new UniBookstore();
-        } else if (store == BookstoreInterface.Options.MANDOBOOKS) {
+        } else if (activity == Options.MANDOBOOKS) {
             
         }
 

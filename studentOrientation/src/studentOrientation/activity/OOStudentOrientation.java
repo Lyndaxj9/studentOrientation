@@ -9,10 +9,10 @@ public class OOStudentOrientation implements OOOrientation {
     public SelectDormInterface dorm;
     public RegisterInterface reg;
 
-    private BookstoreInterface.Options storeName;
-    private TourInterface.Transport transport;
-    private SelectDormInterface.Selecting selectMethod;
-    private RegisterInterface.RegMethod regPlace;
+    private Options storeName;
+    private Options transport;
+    private Options selectMethod;
+    private Options regPlace;
 
     private SimpleBookstoreFactory sbf = new SimpleBookstoreFactory();
 
@@ -21,10 +21,8 @@ public class OOStudentOrientation implements OOOrientation {
     public int carbonFootprint;
     public int calories;
 
-    public OOStudentOrientation(BookstoreInterface.Options storeName_In,
-            TourInterface.Transport transport_In,
-            SelectDormInterface.Selecting selectMethod_In,
-            RegisterInterface.RegMethod regPlace_In) {
+    public OOStudentOrientation(Options storeName_In, Options transport_In,
+            Options selectMethod_In, Options regPlace_In) {
        storeName = storeName_In; 
        transport = transport_In;
        selectMethod = selectMethod_In;
