@@ -1,0 +1,10 @@
+# Generated Java files
+*.class
+
+# Vim Files
+*.swp
+studentOrientation/src/studentOrientation/driver/*.swp
+studentOrientation/src/studentOrientation/*/*.swp
+
+# Folder containing files after build
+BUILD/*
