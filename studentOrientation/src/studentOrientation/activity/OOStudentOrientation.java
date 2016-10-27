@@ -1,6 +1,5 @@
 package studentOrientation.activity;
 
-import studentOrientation.factory.SimpleActivityFactory;
 import studentOrientation.factory.SimpleBookstoreFactory;
 
 public class OOStudentOrientation implements OOOrientation {
@@ -15,7 +14,7 @@ public class OOStudentOrientation implements OOOrientation {
     private SelectDormInterface.Selecting selectMethod;
     private RegisterInterface.RegMethod regPlace;
 
-    private SimpleActivityFactory saf;
+    private SimpleBookstoreFactory sbf = new SimpleBookstoreFactory();
 
     public int duration;
     public int cost;
@@ -33,7 +32,7 @@ public class OOStudentOrientation implements OOOrientation {
     }
 
     public void chooseBookstore() {
-        bookstore = ((SimpleBookstoreFactory)saf).createActivity(storeName);        
+        bookstore = sbf.createActivity(storeName);        
         System.out.println("chooseBookstore()");
     }
 
