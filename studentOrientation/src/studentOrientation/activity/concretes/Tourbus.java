@@ -2,9 +2,15 @@ package studentOrientation.activity.concretes;
 
 import studentOrientation.util.Logger;
 import studentOrientation.activity.TourInterface;
+import studentOrientation.attr.CostI;
+import studentOrientation.attr.concretes.TourCost;
+import studentOrientation.attr.DurationI;
+import studentOrientation.attr.concretes.TourDuration;
 
 public class Tourbus implements TourInterface {
     private static Logger log = Logger.getInstance();
+    private CostI priceGet = new TourCost();
+    private DurationI timeGet = new TourDuration();
 
     private double cost;
     private int duration;
@@ -12,15 +18,25 @@ public class Tourbus implements TourInterface {
     private int carbonFoot;
 
     public Tourbus() {
+        setCost();
+        setDuration();
         log.writeMessage("CONSTRUCTOR: Tourbus() called.", Logger.DebugLevel.CONSTRUCTOR);
     }
 
+    private void setCost() {
+        cost = ((TourCost)priceGet).getBuscost();    
+    }
+
     public double getCost() {
-        return 0;
+        return cost;
+    }
+
+    private void setDuration() {
+        duration = timeGet.getValue();    
     }
 
     public int getDuration() {
-        return 0; 
+        return duration; 
     }
 
     public int getEffort() {

@@ -2,9 +2,12 @@ package studentOrientation.activity.concretes;
 
 import studentOrientation.util.Logger;
 import studentOrientation.activity.SelectDormInterface;
+import studentOrientation.attr.CostI;
+import studentOrientation.attr.concretes.DormCost;
 
 public class DormOffice implements SelectDormInterface{
     private static Logger log = Logger.getInstance();
+    private CostI priceGet = new DormCost();
 
     private double cost;
     private int duration;
@@ -12,11 +15,16 @@ public class DormOffice implements SelectDormInterface{
     private int carbonFoot;
 
     public DormOffice() {
+        setCost();
         log.writeMessage("CONSTRUCTOR: DormOffice() called.", Logger.DebugLevel.CONSTRUCTOR);
     }
 
+    private void setCost() {
+        cost = priceGet.getValue();
+    }
+
     public double getCost() {
-        return 0;
+        return cost;
     }
 
     public int getDuration() {
