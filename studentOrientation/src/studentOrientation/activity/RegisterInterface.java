@@ -1,6 +1,6 @@
 package studentOrientation.activity;
 
-public interface RegisterInterface {
+public interface RegisterInterface extends ActivityInterface {
     public enum RegMethod {
         OFFICE, COMPLAB
     }
