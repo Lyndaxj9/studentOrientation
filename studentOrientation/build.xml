@@ -54,11 +54,15 @@
             <arg value="${arg0}"/>
         </java>
 	
-    </target>
+</target>
+
+<target name="javadocs" depends="jar">
+    <javadoc sourcepath="studentOrientation/src" destdir="BUILD/doc"/>
+</target>
 
 <target name="tarzip" > 
-	    <delete file="./Omowumi_Ademola_assign2.tar" quiet="true" /> 
-	    <tar destfile="${BUILD}/dist/Omowumi_Ademola_assign2.tar.gz" basedir="../../" compression="gzip"/>
+	    <delete file="./Omowumi_Ademola_assign3.tar" quiet="true" /> 
+        <tar destfile="${BUILD}/dist/Omowumi_Ademola_assign3.tar.gz" basedir="." compression="gzip"/>
 </target>
 
 </project>

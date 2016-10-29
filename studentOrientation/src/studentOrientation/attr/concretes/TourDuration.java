@@ -4,7 +4,7 @@ import studentOrientation.attr.DurationI;
 
 public class TourDuration implements DurationI {
     private int minutes = 11;
-    private double modifier = .8;
+    private double modifier = 1.1;
 
     public int getValue() {
         return minutes;

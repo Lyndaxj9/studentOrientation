@@ -6,20 +6,28 @@ import studentOrientation.attr.CostI;
 import studentOrientation.attr.concretes.TourCost;
 import studentOrientation.attr.DurationI;
 import studentOrientation.attr.concretes.TourDuration;
+import studentOrientation.attr.CarbonFPI;                                                                                                                                            
+import studentOrientation.attr.concretes.TourCarbon;
+import studentOrientation.attr.EffortI;
+import studentOrientation.attr.concretes.TourEffort;
 
 public class Tourfoot implements TourInterface {
     private static Logger log = Logger.getInstance();
     private CostI priceGet = new TourCost();
     private DurationI timeGet = new TourDuration();
+    private CarbonFPI carbonGet = new TourCarbon();
+    private EffortI caloriesGet = new TourEffort(); 
 
     private double cost;
     private int duration;
     private int effort;
-    private int carbonFoot;
+    private double carbonFoot;
 
     public Tourfoot() {
         setCost();
         setDuration();
+        setEffort();
+        setCarbon();
         log.writeMessage("CONSTRUCTOR: Tourfoot() called.", Logger.DebugLevel.CONSTRUCTOR);
     }
 
@@ -41,11 +49,19 @@ public class Tourfoot implements TourInterface {
         return duration; 
     }
 
-    public int getEffort() {
-        return 0; 
+    private void setEffort() {
+        effort = caloriesGet.getValue() + (int)caloriesGet.getModify();    
     }
 
-    public int getCarbonFoot() {
-        return 0;
+    public int getEffort() {
+        return effort; 
+    }
+
+    private void setCarbon() {
+        carbonFoot = carbonGet.getValue();    
+    }
+
+    public double getCarbonFoot() {
+        return carbonFoot;
     }
 }

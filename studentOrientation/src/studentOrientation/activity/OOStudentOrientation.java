@@ -25,8 +25,8 @@ public class OOStudentOrientation implements OOOrientation {
 
     private int duration = 0;
     private double cost = 0;
-    private int carbonFootprint;
-    private int calories;
+    private double carbonFootprint = 0;
+    private int calories = 0;
 
     public OOStudentOrientation(Options storeName_In, Options transport_In,
             Options selectMethod_In, Options regPlace_In) {
@@ -42,6 +42,8 @@ public class OOStudentOrientation implements OOOrientation {
         log.writeMessage("BUILDER: chooseBookstore() called.", Logger.DebugLevel.BUILDER);
         cost += bookstore.getCost();
         duration += bookstore.getDuration();
+        calories += bookstore.getEffort() * (double)duration;
+        carbonFootprint += bookstore.getCarbonFoot();
     }
 
     public void setUpTour() {
@@ -50,6 +52,8 @@ public class OOStudentOrientation implements OOOrientation {
         log.writeMessage("BUILDER: setUpTour() called.", Logger.DebugLevel.BUILDER);
         cost += tour.getCost();
         duration += tour.getDuration();
+        calories += tour.getEffort() * (double)duration;
+        carbonFootprint += tour.getCarbonFoot();
     }
 
     public void selectDorm() {
@@ -57,6 +61,9 @@ public class OOStudentOrientation implements OOOrientation {
         dorm = ((SimpleDormFactory)saf).createActivity(selectMethod);
         log.writeMessage("BUILDER: selectDorm() called.", Logger.DebugLevel.BUILDER);
         cost += dorm.getCost(); 
+        duration += dorm.getDuration();
+        calories += dorm.getEffort() * (double)duration;
+        carbonFootprint += dorm.getCarbonFoot();
     }
 
     public void registerCourses() {
@@ -64,6 +71,9 @@ public class OOStudentOrientation implements OOOrientation {
         reg = ((SimpleRegisterFactory)saf).createActivity(regPlace);
         log.writeMessage("BUILDER: registerCourses() called.", Logger.DebugLevel.BUILDER);
         cost += reg.getCost();
+        duration += reg.getDuration();
+        calories += reg.getEffort() * (double)duration;
+        carbonFootprint += reg.getCarbonFoot();
     }
 
     /**
@@ -71,7 +81,8 @@ public class OOStudentOrientation implements OOOrientation {
      * with all of its attributes
      */
     public String toString() {
-        String result = String.format("Cost: $%.2f\n", cost) + String.format("Duration: %d minutes\n", duration);
+        String result = String.format("Cost: $%.2f\n", cost) + String.format("Duration: %d minutes\n", duration) 
+            + String.format("Effort: %d calories\n", calories) + String.format("Carbon Footprint: %.8f tonnes\n", carbonFootprint);
         return result;
        //return "cost: " + Double.toString(cost) + "\n";
     }

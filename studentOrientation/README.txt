@@ -1,3 +1,4 @@
+* Work in Tour concrete classes to that the attributes are correctly initialized
 * Create all the attribute interfaces and concrete classes and apply them to the concrete activity classes
 ----------- WORKING
 * Create all the factories and concrete activity objects 

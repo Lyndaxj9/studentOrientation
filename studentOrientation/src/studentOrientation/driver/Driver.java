@@ -29,7 +29,7 @@ public class Driver {
         Logger log = Logger.getInstance();
         log.setDebugValue(debugValue);
 
-        OOOrientation myOrientation = new OOStudentOrientation(Options.UNIBOOKSTORE, Options.TOURFOOT, Options.DORMGAME, Options.REGOFFICE);
+        OOOrientation myOrientation = new OOStudentOrientation(Options.UNIBOOKSTORE, Options.TOURBUS, Options.DORMOFFICE, Options.REGCOMPLAB);
 
         OrientationWorkshop shop = new StudentOWorkshop();
         shop.construct(myOrientation);
