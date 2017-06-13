@@ -1,6 +1,6 @@
 # studentOrientation
 
-Student Orientation Itinarary
+Student Orientation Itinerary
 
 Author: Omowumi L. Ademola
 
@@ -24,3 +24,5 @@ Sample Output:
 To Run:
 
 ant -buildfile studentOrientation/build.xml run
+
+Note: the values for cost, duration, effort and carbon footprint are either approximations or made up.
